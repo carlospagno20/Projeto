@@ -3,6 +3,7 @@ services:
 
   postgres-service:
     container_name: todolistdb
+    
     ports:
       - "5432:5432"
     image: postgres
