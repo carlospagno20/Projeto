@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { Button, Icon, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { useState } from 'react';
-
+import { TaskList } from './TaskList';
 
 function App() {
+  
   const [showMenu, setShowMenu] = useState(true);
 
   return (
@@ -29,11 +29,11 @@ function App() {
 
             <ListItem button={true} component={Link} {...{to: "/pending"}}>
               <ListItemIcon><Icon>list</Icon></ListItemIcon>
-              <ListItemText primary="Pending"></ListItemText>
+              <ListItemText primary="Pendentes"></ListItemText>
             </ListItem>
             <ListItem button={true} component={Link} {...{to: "/done"}}>
               <ListItemIcon><Icon>checked</Icon></ListItemIcon>
-              <ListItemText primary="Done"></ListItemText>
+              <ListItemText primary="Finalizados"></ListItemText>
             </ListItem>
 
           </List>
@@ -45,8 +45,8 @@ function App() {
           <div className="sidebar-body-div-outlet">
 
             <Switch>
-              <Route path="/pending" exact={true}><h1>Pending</h1></Route>
-              <Route path="/done" exact={true}><h1>Done</h1></Route> 
+              <Route path="/pending" exact={true}><TaskList done={false}></TaskList></Route>
+              <Route path="/done" exact={true}><TaskList done={true}></TaskList></Route> 
               </Switch>
 
 </div>
