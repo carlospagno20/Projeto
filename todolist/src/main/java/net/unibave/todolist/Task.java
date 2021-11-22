@@ -1,5 +1,4 @@
 package net.unibave.todolist;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;

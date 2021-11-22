@@ -44,10 +44,10 @@ function App() {
 
           <div className="sidebar-body-div-outlet">
 
-            <Switch>
-              <Route path="/pending" exact={true}><TaskList done={false}></TaskList></Route>
-              <Route path="/done" exact={true}><TaskList done={true}></TaskList></Route> 
-              </Switch>
+          <Switch>
+              <Route path="/pending" exact={true} component={() => TaskList({done: false})} />
+              <Route path="/done" exact={true} component={() => TaskList({done: true})} />
+            </Switch>
 
 </div>
 
